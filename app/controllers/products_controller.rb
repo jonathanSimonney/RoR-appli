@@ -9,5 +9,4 @@ class ProductsController < ApplicationController
     # @product = Product.where(id: params[:id]).first
     @product = Product.find_by(id: params[:id])
   end
-
 end

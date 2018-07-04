@@ -5,3 +5,8 @@ Notre produit
 <%= @product.description %>
 <br>
 <%= @product.price %>
+<hr>
+<%= form_tag(orders_add_product_path, method: "post") do %>
+  <%= hidden_field(:product, :id) %>
+  <%= submit_tag("ajouter au panier", class: 'btn btn-primary') %>
+<% end %>
