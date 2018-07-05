@@ -2,11 +2,9 @@ class Basket < ApplicationRecord
   belongs_to :product
   belongs_to :order
 
-  before_create :set_total_value
-  before_update :set_total_value
+  before_save :set_total_value
 
-  after_create :set_order_price
-  after_update :set_order_price
+  after_save :set_order_price
 
   def set_total_value
     self.total_price = self.unit_price * self.quantity
